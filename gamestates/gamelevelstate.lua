@@ -27,6 +27,8 @@ function MyGameLevelState:__new(display)
    -- Place the player character at a starting location
    mapbuilder:addActor(prism.actors.Player(), 12, 12)
 
+   mapbuilder:addActor(prism.actors.Kobold(), 4, 4)
+
    -- Build the map and instantiate the level with systems
    local map, actors = mapbuilder:build()
    local level = prism.Level(map, actors, {
