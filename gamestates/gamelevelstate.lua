@@ -51,6 +51,10 @@ function MyGameLevelState:handleMessage(message)
 
    -- This is where you'd process custom messages like advancing to the next
    -- level or triggering a game over.
+   if prism.messages.Lose:is(message) then
+      self.manager:pop();
+      love.event.quit();
+   end
 end
 
 --- @param primary Senses[] { curActor:getComponent(prism.components.Senses)}
