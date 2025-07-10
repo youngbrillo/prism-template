@@ -3,7 +3,8 @@
 local Fall = prism.Action:extend "Fall"
 
 function Fall:perform(level)
-   level:removeActor(self.owner) -- into the depths with you!
+--    level:removeActor(self.owner) -- into the depths with you!
+    level:perform(prism.actions.Die(self.owner))
 end
 
 function Fall:canPerform(level)
